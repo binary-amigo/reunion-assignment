@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import { Login } from "./pages/Login";
 import { Route, Routes } from "react-router-dom";
@@ -9,7 +8,6 @@ import { Add } from "./pages/Add.tsx";
 import PrivateRoute from "./components/PrivateRoute.tsx";
 
 function App() {
-  const [login, setLogin] = useState(false);
 
   return (
     <>

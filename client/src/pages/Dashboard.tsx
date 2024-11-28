@@ -2,7 +2,6 @@ import { CheckCircle2, Plus, ChevronDown, Timer, Clock } from "lucide-react";
 
 import { Header } from "@/components/ui/header";
 import { StatsCard } from "@/components/statsCard";
-import { TaskCard } from "@/components/taskCard";
 import { Button } from "@/components/ui/button";
 
 import {

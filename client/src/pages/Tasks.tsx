@@ -3,7 +3,6 @@
 import { Plus, Trash2, ChevronDown, Edit } from "lucide-react";
 
 import { Header } from "@/components/ui/header";
-import { StatsCard } from "@/components/statsCard";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
@@ -12,7 +11,6 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
