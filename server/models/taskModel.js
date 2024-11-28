@@ -1,12 +1,12 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const taskSchema = new mongoose.Schema({
-    name: {
+    title: {
         type: String,
         required: true
     },
     status: {
-        type: boolean,
+        type: Boolean,
         required: true,
         default: false
     },
@@ -15,14 +15,14 @@ const taskSchema = new mongoose.Schema({
         required: true,
         default: 5
     },
-    dueDate: {
-        type: Date,
-        required: true
-    },
-    createdOn: {
+    startTime: {
         type: Date,
         required: true,
-        default: Date.now
+        default: Date.now()
+    },
+    endTime: {
+        type: Date,
+        required: true,
     }
 });
 
