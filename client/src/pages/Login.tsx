@@ -22,7 +22,7 @@ export function Login() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(import.meta.env.VITE_BACKEND_URL + "/" + state, {
+      const response = await axios.post(process.env.BACKEND_URL + "/" + state, {
         email,
         password,
       });
