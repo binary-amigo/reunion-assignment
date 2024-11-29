@@ -22,21 +22,38 @@ export function Login() {
     e.preventDefault();
 
     try {
-      console.log(import.meta.env.VITE_BACKEND_URL);
-      console.log(email, password)
       const response = await axios.post(import.meta.env.VITE_BACKEND_URL + "/" + state, {
         email,
         password,
       });
-      
-      if (response.status === 201) {
-        const data = response.data;
-        // Save token if needed
-        localStorage.setItem("token", data.token);
-        navigate("/dashboard");
+
+      if(state === "login") {
+        if (response.status === 201) {
+          const data = response.data;
+          localStorage.setItem("token", data.token);
+          navigate("/dashboard");
+          
+        } else if(response.status === 401) {
+          alert("Login failed. Please check your credentials.");
+        } else {
+          alert("An error occurred. Please try again.");
+        }
       } else {
-        alert("Login failed. Please check your credentials.");
+        if (response.status === 201) {
+          const data = response.data;
+          // Save token if needed
+          localStorage.setItem("token", data.token);
+          setState("login");
+          navigate("/");
+          alert("Sign up successful. Please login to continue.");
+        } else if(response.status === 401) {
+          alert("User already exists. Please login.");
+        } else {
+          alert("An error occurred. Please try again.");
+        }
       }
+      
+      
     } catch (error) {
       console.error("Error logging in:", error);
       alert("An error occurred. Please try again.");
